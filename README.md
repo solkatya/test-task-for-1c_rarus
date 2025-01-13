@@ -1,0 +1,1 @@
+# test-task-for-1c_rarus
