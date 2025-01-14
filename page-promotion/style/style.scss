@@ -1,0 +1,353 @@
+/* MEDIA */
+$mobile: 980px;
+$xxs: 375px; //iphone X в портретной ориентации
+$xs: 414px; //iphone plus в портретной ориентации
+$sm: 568px; //iphone X в альбомной ориентации
+$md: 820px; //планшеты в портретной ориентации / телефоны в альбомной
+$lg: 1024px; //планшеты в альбомной ориентации
+$xl: 1280px; //ноутбуки
+$xxl: 1600px; 
+
+/* COLORS */
+$body-background:#ffffff;
+$color-text: #333333;
+$color-hover:#E11C4B;
+
+$content-gap: 40px;
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/page-promotion/fonts/roboto/Roboto-Bold.woff2') format('woff2'), url('/page-promotion/fonts/roboto/Roboto-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('/page-promotion/fonts/roboto/Roboto-Light.woff2') format('woff2'), url('/page-promotion/fonts/roboto/Roboto-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('/page-promotion/fonts/roboto/Roboto-Medium.woff2') format('woff2'), url('/page-promotion/fonts/roboto/Roboto-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('/page-promotion/fonts/roboto/Roboto-Regular.woff2') format('woff2'), url('/page-promotion/fonts/roboto/Roboto-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rosario';
+    src: url('/page-promotion/fonts/rosario/Rosario-Bold.woff2') format('woff2'), url('/page-promotion/fonts/rosario/Rosario-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Rosario';
+    src: url('/page-promotion/fonts/rosario/Rosario-Light.woff2') format('woff2'), url('/page-promotion/fonts/rosario/Rosario-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Rosario';
+    src: url('/page-promotion/fonts/rosario/Rosario-Medium.woff2') format('woff2'), url('fonts/BebasNeue-Regular.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Rosario';
+    src: url('/page-promotion/fonts/rosario/Rosario-Regular.woff2') format('woff2'), url('/page-promotion/fonts/rosario/Rosario-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    box-sizing: border-box;
+    outline: none !important;
+}
+
+body {
+    max-width: 100%;
+    padding: 0;
+    font-family: 'Roboto';
+    overflow-x: hidden;
+    background-color: $body-background;
+    color: $color-text;
+
+    @media (max-width:$lg){
+    }
+}
+
+.l-container {
+    width: auto;
+    max-width: 100%;
+
+    @media (max-width:$sm){
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+.header {
+
+    &__container, &__middle, &__bottom {
+        width: 100%;
+        max-width: 1150px;
+        margin: 0 auto;
+    }
+
+    &__top {
+        border-bottom:2px solid #E8E8E8;
+    } 
+
+    &__middle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+        gap: 15px;
+    } 
+
+    &__bottom {
+        overflow: hidden; 
+        width: 100%;
+        position: relative;
+
+        .catalog-menu {
+            overflow: hidden; 
+            white-space: nowrap;
+            width: 100%;
+            position: relative;
+
+            &__slider {
+                overflow: hidden; 
+                transition: transform 0.3s ease;
+            }
+            
+            &__root {
+                padding: 0;
+                margin: 10px 0;
+                transition: transform 0.3s ease;
+                position: relative;
+
+                .owl-nav {
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+
+            li {
+                list-style: none;
+                display: inline-block;
+
+            }
+
+            &__item:first-child {
+                background-position: 0;
+                background-repeat: no-repeat;
+                position: relative;
+                background-image: url('/page-promotion/img/icons/percent.svg');
+                padding-left: 24px;
+
+                a {
+                    color: $color-hover;
+                }
+            }
+
+            a { 
+                font-size: 16px;
+                text-decoration: none;
+                color: $color-text;
+                transition: 0.3s;
+                white-space: nowrap;
+
+                &:hover {
+                    color:$color-hover;
+                }
+            }
+        }
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0;
+
+        @media (min-width:$md) {
+            padding: 10px 0;
+        }
+
+        &-contact {
+            display: flex;
+
+            p {
+                margin: 0;
+                font-size: 16px;
+                cursor: pointer;
+                transition: 0.3s;
+
+                &:first-child {
+                    margin-right: 36px;
+                }
+            }
+            .contact-location, .contact-shop {
+                background-position: 0;
+                background-repeat: no-repeat;
+                position: relative;
+            }
+
+            .contact-location {
+                background-image: url('/page-promotion/img/icons/location.svg');
+                padding-left: 18px;
+            }
+            .contact-shop {
+                background-image: url('/page-promotion/img/icons/shop.svg');
+                padding-left: 24px;
+            }
+        }
+
+        .contact-link {
+            color: $color-text;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 16px;
+            position: relative;
+            transition: 0.3s;
+            background-image: url('/page-promotion/img/icons/phone.svg');
+            background-position: 0;
+            background-repeat: no-repeat;
+            padding-left: 24px;
+
+            &:hover {
+                color: $color-hover;
+                background-image: url('/page-promotion/img/icons/phone-hover.svg');
+            }
+        }
+    }
+
+    &-logo {
+        padding: 25px 40px 25px 0;
+    }
+
+    &-search {
+        width: 100%;
+        max-width: 643px;
+        position: relative;
+        
+        &__btn {
+            display: block;
+            position: absolute;
+            top: 15px;
+            left: 22px;
+            width: 26px;
+            height: 26px;
+            border: none;
+            background: url('/page-promotion/img/icons/search-hover.svg') center center no-repeat;
+            cursor: pointer;
+        }
+
+        form {   
+        }
+
+        input {
+            width: 100%;
+            padding: 11px 11px 11px 52px;
+            height: 57px;
+            font-size: 16px;
+            line-height: 24px;
+            box-sizing: border-box;
+            border-radius: 100px;
+            border: 2px solid #DDDDDD;
+            color: #8D8D8D;
+            outline: none !important;
+            transition: background-color .4s ease;
+
+            &:focus {
+                background-color: #eee;
+            }
+        }
+        
+    }
+
+    &-cart {
+        display: flex;
+
+        .cart-item {
+            position: relative;
+            margin: 0 13px;
+            cursor: pointer;
+            z-index: 1;
+            transition: .3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+
+            &::before {
+                width: 19px;
+                height: 18px;
+                background-position: 0;
+                background-repeat: no-repeat;
+                content: '';
+                position: relative;
+            }
+
+            &__profile::before {
+                background-image: url('/page-promotion/img/icons/account.svg');
+            }
+            &__profile:hover::before {
+                background-image: url('/page-promotion/img/icons/account-hover.svg');
+            }
+            &__orders::before {
+                background-image: url('/page-promotion/img/icons/purchases.svg');
+            }
+            &__orders:hover::before {
+                background-image: url('/page-promotion/img/icons/purchases-hover.svg');
+            }
+            &__favourites::before {
+                background-image: url('/page-promotion/img/icons/favorite.svg');
+            }
+            &__favourites:hover::before {
+                background-image: url('/page-promotion/img/icons/favorite-hover.svg');
+            }
+            &__basket::before {
+                background-image: url('/page-promotion/img/icons/cart.svg');
+            }
+            &__basket:hover::before {
+                background-image: url('/page-promotion/img/icons/cart-hover.svg');
+            }
+
+            &__btn {
+                color: $color-text;
+                font-size: 16px;
+                text-decoration: none;
+                transition: 0.3s all ease;
+
+                &::after {
+                    width: 100%;
+                    height: 100%;
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+
+                &:hover {
+                    color: $color-hover;
+                }
+            }
+        }
+    }
+}
