@@ -110,6 +110,10 @@ body {
   overflow: hidden;
   transition: transform 0.3s ease;
 }
+.header__bottom .catalog-menu__slider .owl-carousel .owl-stage {
+  width: -moz-max-content !important;
+  width: max-content !important;
+}
 .header__bottom .catalog-menu__root {
   padding: 0;
   margin: 10px 0;
@@ -119,10 +123,27 @@ body {
 .header__bottom .catalog-menu__root .owl-nav {
   display: flex;
   justify-content: space-between;
+  position: relative;
+}
+.header__bottom .catalog-menu__root .owl-nav .owl-next, .header__bottom .catalog-menu__root .owl-nav .owl-prev {
+  content: "";
+  width: 18px;
+  height: 18px;
+  background-position: 0;
+  background-repeat: no-repeat;
+  background-image: url("/page-promotion/img/icons/next.svg");
+  position: absolute;
+  top: -17px;
+  right: 0;
+}
+.header__bottom .catalog-menu__root .owl-nav span {
+  font-size: 0;
 }
 .header__bottom .catalog-menu li {
   list-style: none;
   display: inline-block;
+  width: auto;
+  max-width: 174px;
 }
 .header__bottom .catalog-menu__item:first-child {
   background-position: 0;
@@ -149,7 +170,7 @@ body {
   justify-content: space-between;
   padding: 20px 0;
 }
-@media (min-width: 820px) {
+@media (min-width: 860px) {
   .header__container {
     padding: 10px 0;
   }
@@ -206,8 +227,8 @@ body {
 .header-search__btn {
   display: block;
   position: absolute;
-  top: 15px;
-  left: 22px;
+  top: 10px;
+  left: 18px;
   width: 26px;
   height: 26px;
   border: none;
@@ -217,7 +238,7 @@ body {
 .header-search input {
   width: 100%;
   padding: 11px 11px 11px 52px;
-  height: 57px;
+  height: 46px;
   font-size: 16px;
   line-height: 24px;
   box-sizing: border-box;
@@ -245,12 +266,19 @@ body {
   gap: 5px;
 }
 .header-cart .cart-item::before {
-  width: 19px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
   background-position: 0;
   background-repeat: no-repeat;
   content: "";
   position: relative;
+  background-size: contain;
+}
+@media (min-width: 860px) {
+  .header-cart .cart-item::before {
+    width: 19px;
+    height: 18px;
+  }
 }
 .header-cart .cart-item__profile::before {
   background-image: url("/page-promotion/img/icons/account.svg");
@@ -278,9 +306,14 @@ body {
 }
 .header-cart .cart-item__btn {
   color: #333333;
-  font-size: 16px;
+  font-size: 0;
   text-decoration: none;
   transition: 0.3s all ease;
+}
+@media (min-width: 860px) {
+  .header-cart .cart-item__btn {
+    font-size: 16px;
+  }
 }
 .header-cart .cart-item__btn::after {
   width: 100%;

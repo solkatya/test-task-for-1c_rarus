@@ -3,7 +3,7 @@ $mobile: 980px;
 $xxs: 375px; //iphone X в портретной ориентации
 $xs: 414px; //iphone plus в портретной ориентации
 $sm: 568px; //iphone X в альбомной ориентации
-$md: 820px; //планшеты в портретной ориентации / телефоны в альбомной
+$md: 860px; //планшеты в портретной ориентации / телефоны в альбомной
 $lg: 1024px; //планшеты в альбомной ориентации
 $xl: 1280px; //ноутбуки
 $xxl: 1600px; 
@@ -134,6 +134,12 @@ body {
             &__slider {
                 overflow: hidden; 
                 transition: transform 0.3s ease;
+
+                .owl-carousel {
+                    .owl-stage {
+                        width: max-content !important; 
+                    }
+                }
             }
             
             &__root {
@@ -145,12 +151,31 @@ body {
                 .owl-nav {
                     display: flex;
                     justify-content: space-between;
+                    position: relative;
+
+                    .owl-next,.owl-prev {
+                        content: '';
+                        width: 18px;
+                        height: 18px;
+                        background-position: 0;
+                        background-repeat: no-repeat;
+                        background-image: url('/page-promotion/img/icons/next.svg');
+                        position: absolute;
+                        top: -17px;
+                        right: 0;
+                    }
+
+                    span {
+                        font-size: 0;
+                    }
                 }
             }
 
             li {
                 list-style: none;
                 display: inline-block;
+                width: auto;
+                max-width: 174px;
 
             }
 
@@ -249,8 +274,8 @@ body {
         &__btn {
             display: block;
             position: absolute;
-            top: 15px;
-            left: 22px;
+            top: 10px;
+            left: 18px;
             width: 26px;
             height: 26px;
             border: none;
@@ -264,7 +289,7 @@ body {
         input {
             width: 100%;
             padding: 11px 11px 11px 52px;
-            height: 57px;
+            height: 46px;
             font-size: 16px;
             line-height: 24px;
             box-sizing: border-box;
@@ -294,14 +319,20 @@ body {
             flex-direction: column;
             align-items: center;
             gap: 5px;
-
+            
             &::before {
-                width: 19px;
-                height: 18px;
+                width: 24px;
+                height: 24px;
                 background-position: 0;
                 background-repeat: no-repeat;
                 content: '';
                 position: relative;
+                background-size: contain;
+
+                @media (min-width:$md) {
+                    width: 19px;
+                    height: 18px;
+                }
             }
 
             &__profile::before {
@@ -331,9 +362,13 @@ body {
 
             &__btn {
                 color: $color-text;
-                font-size: 16px;
+                font-size: 0;
                 text-decoration: none;
                 transition: 0.3s all ease;
+
+                @media (min-width:$md) {
+                    font-size: 16px;
+                }
 
                 &::after {
                     width: 100%;
