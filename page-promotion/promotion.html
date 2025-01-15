@@ -16,8 +16,8 @@
                 <div class="header__top">
                     <div class="header__container">
                         <div class="header__container-contact">
-                            <p class="contact-location">г. Рязань</p>
-                            <p class="contact-shop">Магазины</p>
+                            <a class="contact-location">г. Рязань</a>
+                            <a class="contact-shop">Магазины</a>
                         </div>
                         <a class="contact-link" href="tel:+88000000000">8 (800) 000 00 00</a>
                     </div>
@@ -44,8 +44,47 @@
                         </div>
                         <div class="cart-item cart-item__basket">
                             <a class="cart-item__btn" href="#">Корзина</a>
-                        </div>         
+                        </div>
+                        <div class="header__container-contact -mobile">
+                            <a class="contact-location">г. Рязань</a>
+                            <a class="contact-shop">Магазины</a>
+                        </div>        
                     </div>
+                </div>
+                <div class="mobile-menu">
+                    <div class="menu-burger">
+                        <span class="menu-burger-item"></span>
+                        <span class="menu-burger-item"></span>
+                        <span class="menu-burger-item"></span>
+                    </div>
+                    <div class="header-search">
+                        <form action="#">
+                            <button class="header-search__btn" type="submit"></button>
+                            <input type="search" placeholder="Поиск среди товаров" name="q" required="required" minlength="3" autocomplete="off" class="is-focus">
+                        </form>
+                    </div>
+                    <nav class="mobile-menu__catalog">
+                        <div class="menu-mobile__header">
+                            <button class="mobile-menu__close"></button>
+                        </div>
+                        <div class="mobile-menu__title">
+                            <a class="mobile-menu__title-btn" href="#"> Каталог</a>
+                        </div>
+                        <ul class="catalog-menu__root">
+                            <li class="catalog-menu__item"><a href="#">Акции</a></li>
+                            <li><a href="#">Смартфоны</a></li>
+                            <li><a href="#">Ноутбуки</a></li>
+                            <li><a href="#">Телевизоры</a></li>
+                            <li><a href="#">Видеотехника</a></li>
+                            <li><a href="#">Планшеты</a></li>
+                            <li><a href="#">Наушники</a></li>
+                            <li><a href="#">Гейминг</a></li>
+                            <li><a href="#">Умные часы</a></li>
+                            <li><a href="#">Портативная акустика</a></li>
+                            <li><a href="#">Сетевое оборудование</a></li>
+                            <li><a href="#">Офисная техника</a></li>
+                        </ul>
+                    </nav>
                 </div>
                 <div class="header__bottom js-carousel">
                     <nav class="catalog-menu">
@@ -69,6 +108,8 @@
                 </div>
             </section>
         </header>
+
+        
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="/page-promotion/js/scripts.js"></script>

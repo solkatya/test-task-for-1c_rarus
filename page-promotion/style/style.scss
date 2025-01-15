@@ -110,14 +110,24 @@ body {
 
     &__top {
         border-bottom:2px solid #E8E8E8;
+        display: none;
+
+        @media (min-width:$sm) {
+            display: block;
+        }
     } 
 
     &__middle {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 20px 0;
-        gap: 15px;
+        padding: 0;
+        gap: 0;
+
+        @media (min-width:$sm) {
+            padding: 20px 0;
+            gap: 15px;
+        }
     } 
 
     &__bottom {
@@ -208,38 +218,59 @@ body {
     &__container {
         display: flex;
         justify-content: space-between;
-        padding: 20px 0;
+        padding: 0;
 
-        @media (min-width:$md) {
-            padding: 10px 0;
+        @media (min-width:$sm) {
+            padding: 10px 0 10px 20px;
         }
 
         &-contact {
             display: flex;
 
-            p {
+            a {
                 margin: 0;
                 font-size: 16px;
                 cursor: pointer;
                 transition: 0.3s;
+                text-decoration: none;
+                color: $color-text;
+                position: relative;
+                display: flex;
+                align-items: center;
+
+                &:hover {
+                    color: $color-hover;
+                }
 
                 &:first-child {
                     margin-right: 36px;
                 }
             }
-            .contact-location, .contact-shop {
+            .contact-location::before, .contact-shop::before {
                 background-position: 0;
                 background-repeat: no-repeat;
-                position: relative;
+                position: absolute;
+                transition: 0.3s;
+                content: '';
+                width: 24px;
+                height: 24px;
             }
 
-            .contact-location {
+            .contact-location::before {
                 background-image: url('/page-promotion/img/icons/location.svg');
-                padding-left: 18px;
+                margin-left: -18px;
+
+                &:hover::before {
+                    background-image: url('/page-promotion/img/icons/location-hover.svg');
+                }
             }
-            .contact-shop {
+            .contact-shop::before {
                 background-image: url('/page-promotion/img/icons/shop.svg');
-                padding-left: 24px;
+                margin-left: -24px;
+
+                &:hover::before {
+                    background-image: url('/page-promotion/img/icons/shop-hover.svg');
+                }
             }
         }
 
@@ -270,6 +301,11 @@ body {
         width: 100%;
         max-width: 643px;
         position: relative;
+        display: none;
+            @media (min-width:$sm) {
+                display: block;
+            }
+
         
         &__btn {
             display: block;
@@ -308,6 +344,7 @@ body {
 
     &-cart {
         display: flex;
+        align-items: center;
 
         .cart-item {
             position: relative;
@@ -316,9 +353,13 @@ body {
             z-index: 1;
             transition: .3s;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
             gap: 5px;
+
+            @media (min-width:$sm) {
+                flex-direction: column;
+            }
             
             &::before {
                 width: 24px;
@@ -335,29 +376,60 @@ body {
                 }
             }
 
-            &__profile::before {
-                background-image: url('/page-promotion/img/icons/account.svg');
+            &__profile{
+                display: none;
+                @media (min-width:$sm) {
+                    display: flex;
+                }
+                &::before {
+                    background-image: url('/page-promotion/img/icons/account.svg');
+                }
+
+                &:hover::before {
+                    background-image: url('/page-promotion/img/icons/account-hover.svg');
+                }
+
             }
-            &__profile:hover::before {
-                background-image: url('/page-promotion/img/icons/account-hover.svg');
+            &__orders {
+                
+                @media (max-width:$sm){
+                    margin: 0 24px 0 0;
+                }
+
+                &::before {
+                    background-image: url('/page-promotion/img/icons/purchases.svg');
+                }
+
+                &:hover::before {
+                    background-image: url('/page-promotion/img/icons/purchases-hover.svg');
+                }
+
             }
-            &__orders::before {
-                background-image: url('/page-promotion/img/icons/purchases.svg');
+            &__favourites {
+                display: none;
+                @media (min-width:$sm) {
+                    display: flex;
+                }
+                &::before {
+                    background-image: url('/page-promotion/img/icons/favorite.svg');
+                }
+                &:hover::before {
+                    background-image: url('/page-promotion/img/icons/favorite-hover.svg');
+                } 
+
             }
-            &__orders:hover::before {
-                background-image: url('/page-promotion/img/icons/purchases-hover.svg');
-            }
-            &__favourites::before {
-                background-image: url('/page-promotion/img/icons/favorite.svg');
-            }
-            &__favourites:hover::before {
-                background-image: url('/page-promotion/img/icons/favorite-hover.svg');
-            }
-            &__basket::before {
-                background-image: url('/page-promotion/img/icons/cart.svg');
-            }
-            &__basket:hover::before {
-                background-image: url('/page-promotion/img/icons/cart-hover.svg');
+            &__basket {
+                display: none;
+                @media (min-width:$sm) {
+                    display: flex;
+                }
+                &::before {
+                    background-image: url('/page-promotion/img/icons/cart.svg');
+                }
+
+                &:hover::before {
+                    background-image: url('/page-promotion/img/icons/cart-hover.svg');
+                } 
             }
 
             &__btn {
@@ -384,5 +456,85 @@ body {
                 }
             }
         }
+
+        .-mobile {
+            display: flex;
+                @media (min-width:$sm) {
+                    display: none;
+                }
+            a {
+              font-size: 0;  
+              padding: 0 24px;
+            }
+
+            .contact-location::before, .contact-shop::before {
+                background-size: contain;
+            }
+
+            .contact-location {
+                order: 2;
+                margin: 0;
+            }
+
+            .contact-shop {
+                order: 0;
+            }
+        }
+    }
+
+    .mobile-menu {
+        display: flex;
+        align-items: center;
+        padding: 0 0 5px 0;
+            @media (min-width:$sm) {
+                display: none;
+            }
+        .menu-burger {
+            display: flex;
+            flex-direction: column;
+            margin-right: 20px;
+            cursor: pointer;
+            transition: .3s all ease;
+
+            &-item {
+                width: 24px;
+                height: 2px;
+                margin-bottom: 7.5px;
+                background-color: #8D8D8D;
+                transition: inherit;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+            }
+        }
+
+        .header-search {
+            display: block;
+
+            input {
+                height: 38px;
+                font-size: 14px;
+                padding: 11px 11px 11px 40px;
+            }
+
+            &__btn {
+                width: 18px;
+                height: 18px;
+                background-size: contain;
+            }
+        }
+
+        nav {
+            display: none;
+            &.open {
+                display: block;
+            }
+        }
+        
+        &.active {
+            
+        }   
     }
 }

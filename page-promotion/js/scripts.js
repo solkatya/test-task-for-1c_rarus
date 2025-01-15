@@ -1,3 +1,4 @@
+//carousel menu
 const $jsCarousel = $('.js-carousel');
 if ($jsCarousel.length > 0) {
     ((_root) => {
@@ -28,3 +29,18 @@ if ($jsCarousel.length > 0) {
         });
     })($jsCarousel);
 }
+
+//mobile menu - burger
+document.addEventListener('DOMContentLoaded', function () {
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const menu = document.querySelector('.mobile-menu__catalog');
+
+    if (mobileMenu && menu) {
+        mobileMenu.addEventListener('click', function () {
+            this.classList.toggle('active');
+            menu.classList.toggle('open');
+        });
+    } else {
+        console.warn('Не найден элемент .mobile-menu или .menu');
+    }
+});
