@@ -482,15 +482,174 @@ a {
         display: flex;
         align-items: center;
         padding: 0 0 5px 0;
-            @media (min-width:$md) {
-                padding: 20px;
+
+        transition: transform 0.3s ease, opacity 0.3s ease; 
+        opacity: 1; 
+
+        &.open {
+            opacity: 1; 
+        }
+
+        &__catalog {
+            background-color: #fff;
+            width: 100%;
+            max-width: 560px;
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100%;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            z-index: 10;
+
+            &.open {
+                transform: translateX(0);
             }
-            @media (min-width:$sm) {
-                display: none;
+        }
+        
+        &__header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            position: relative;
+            margin: 15px 10px 0 0;
+        }
+
+        &__close {
+            background: none;
+            border: none;
+            cursor: pointer;
+            width: 18px; 
+            height: 18px; 
+            background-image: url('/page-promotion/img/icons/close.svg'); 
+            background-size: contain;
+            background-repeat: no-repeat; 
+            position: absolute;
+            transition: 0.3s;
+            top: 0;
+            right: 0;
+
+            &:hover, &:active, &:focus {
+                background-image: url('/page-promotion/img/icons/close-hover.svg');
             }
-            @media (max-width:$md) {
+        }
+
+        &__title {
+            padding: 10px;
+            
+            &-btn {
+                font-size: 24px;
+                font-weight: bold;
+            }
+        }
+
+        .catalog-menu__root {
+            padding: 0;
+
+            li {
+                border-bottom: 2px solid #E8E8E8;
+                list-style: none;
                 padding: 10px;
+                position: relative;
+                width: 100%;
+
+                &::before {
+                    content: '';
+                    width: 32px;
+                    height: 32px;
+                    position: absolute;
+                    top: 5px;
+                    left: 10px;
+                    background-position: 0;
+                    background-repeat: no-repeat;
+                }
+
+                &:first-child::before {
+                    background-image: url('/page-promotion/img/catalog/laptop.svg');
+                }
+                &:nth-child(2)::before {
+                    background-image: url('/page-promotion/img/catalog/phone.svg');
+                }
+                &:nth-child(3)::before {
+                    background-image: url('/page-promotion/img/catalog/tv.svg');
+                }
+                &:nth-child(4)::before {
+                    background-image: url('/page-promotion/img/catalog/photo-viseo.svg');
+                }
+                &:nth-child(5)::before {
+                    background-image: url('/page-promotion/img/catalog/table.svg');
+                }
+                &:nth-child(6)::before {
+                    background-image: url('/page-promotion/img/catalog/headset.svg');
+                }
+                &:nth-child(7)::before {
+                    background-image: url('/page-promotion/img/catalog/gaming.svg');
+                }
+                &:nth-child(8)::before {
+                    background-image: url('/page-promotion/img/catalog/watch.svg');
+                }
+                &:nth-child(9)::before {
+                    background-image: url('/page-promotion/img/catalog/column.svg');
+                }
+                &:nth-child(10)::before {
+                    background-image: url('/page-promotion/img/catalog/router.svg');
+                }
+                &:nth-child(11)::before {
+                    background-image: url('/page-promotion/img/catalog/printer.svg');
+                }
+                &:last-child {
+                    border-bottom: none;
+
+                    &::before {
+                        background-image: url('/page-promotion/img/catalog/smart-home.svg');
+                    }
+                    
+                }
+
+                a {
+                    padding: 0 0 0 40px;
+                    &::before {
+                        content: '';
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                    }
+                    &::after {
+                        content: '';
+                        width: 8px;
+                        height: 15px;
+                        position: absolute;
+                        top: 13px;
+                        right: 10px;
+                        background-position: 0;
+                        background-repeat: no-repeat;
+                        background: url('/page-promotion/img/icons/next-btn.svg');
+
+                    }
+                    &:hover::after {
+                        background-image: url('/page-promotion/img/icons/next-btn-hover.svg');
+                    }
+                }
+
+                
             }
+
+        }
+
+        @media (min-width: $md) {
+            padding: 20px;
+        }
+
+        @media (min-width: $sm) {
+            display: none;
+        }
+
+        @media (max-width: $md) {
+            padding: 10px;
+        }
+
         .menu-burger {
             display: flex;
             flex-direction: column;
@@ -530,14 +689,15 @@ a {
 
         nav {
             display: none;
-            &.open {
+                &.open {
                 display: block;
-            }
+                }
         }
         
         &.active {
-            
-        }   
+            background-color: rgba(0, 0, 0, 0.5); 
+            z-index: 1000; 
+        }
     }
 }
 
