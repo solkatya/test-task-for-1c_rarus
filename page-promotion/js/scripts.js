@@ -32,7 +32,7 @@ if ($jsCarousel.length > 0) {
 
 //mobile menu - burger
 document.addEventListener('DOMContentLoaded', function () {
-    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileMenu = document.querySelector('.menu-burger');
     const menu = document.querySelector('.mobile-menu__catalog');
 
     if (mobileMenu && menu) {
@@ -41,6 +41,8 @@ document.addEventListener('DOMContentLoaded', function () {
             menu.classList.toggle('open');
         });
     } else {
-        console.warn('Не найден элемент .mobile-menu или .menu');
+        console.warn('Не найден элемент .menu-burger или .mobile-menu__catalog');
     }
 });
+
+//
