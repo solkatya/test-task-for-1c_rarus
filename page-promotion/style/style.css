@@ -464,4 +464,34 @@ body {
 }
 .header .mobile-menu nav.open {
   display: block;
+}
+.footer {
+  margin: 90px 0 40px;
+  padding: 40px 0;
+  background-color: #F4F4F4;
+}
+.footer__container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+.footer-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 62px;
+}
+.footer-nav a {
+  text-decoration: none;
+  color: #333333;
+  font-size: 16px;
+  line-height: normal;
+}
+.footer-nav a:hover {
+  color: #E11C4B;
 }/*# sourceMappingURL=style.css.map */
