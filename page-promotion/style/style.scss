@@ -100,6 +100,9 @@ a {
     }
 }
 
+.l-wrapper {
+    overflow-x: hidden;
+}
 .header {
     &__container, &__middle, &__bottom {
         width: 100%;
@@ -641,10 +644,10 @@ a {
     &__title {
         font-size: 24px;
         font-weight: bold;
-        margin: 0 0 38px;
+        margin: 0 0 25px;
         @media (min-width: $mobile) {
             font-size: 36px;
-            margin: 0 0 25px;
+            margin: 0 0 36px;
         }
     }
     &-list {
@@ -687,9 +690,15 @@ a {
     margin-left: -20px;
     margin-right: -20px;
     padding: 0;
+    @media (max-width: $md) {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
     @media (max-width: $sm) {
         margin-left: -15px;
+        margin-right: -20px;
     }
+    
 }
 .l-col-xs-6 {
     position: relative;
@@ -702,14 +711,14 @@ a {
     flex-direction: column;
     transition: 0.3s;
     > * {
-         @media (min-width: 820px) {
+         @media (min-width: $sm) {
             margin-left: 15px;
             margin-right: 15px;
             } 
         }
     @media (max-width: $lg) {
         width: calc(50%);
-        
+        margin-bottom: 18px;
     }
     @media (max-width: $sm) {
         width:100%;
@@ -769,9 +778,8 @@ a {
         &-col {
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            @media (min-width:$md) {
-                gap: 50px;
+            @media (max-width:$md) {
+                gap: 20px;
             }
             &:last-child {
                 align-items: end;
@@ -818,6 +826,10 @@ a {
         }
     }
     &-info-data {
+        margin-top: 55px;
+        @media (max-width:$md) {
+            margin: 0;
+        }
         @media (max-width:$sm) {
             margin-top: 30px;
         }
@@ -829,8 +841,12 @@ a {
     }
     &-social {
         display: none;
+        margin-top: 30px;
         @media (min-width:$sm) {
             display: flex;
+        }
+        @media (max-width:$md) {
+            margin-top: 0;
         }
         .social-link {
             font-size: 0;
