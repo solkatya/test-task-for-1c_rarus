@@ -1,21 +1,9 @@
-<svg width="429" height="271" viewBox="0 0 429 271" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g filter="url(#filter0_d_1_266)">
-<rect x="34" y="28" width="361" height="203" rx="10" fill="url(#paint0_radial_1_266)"/>
-</g>
-<rect x="208" y="80" width="135" height="83" fill="url(#pattern0_1_266)"/>
-<rect x="255" y="113" width="122" height="66" fill="url(#pattern1_1_266)"/>
-<rect x="62" y="79" width="49" height="16" fill="url(#pattern2_1_266)"/>
+<svg width="361" height="203" viewBox="0 0 361 203" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<rect width="361" height="203" rx="10" fill="url(#paint0_radial_1_266)"/>
+<rect x="174" y="52" width="135" height="83" fill="url(#pattern0_1_266)"/>
+<rect x="221" y="85" width="122" height="66" fill="url(#pattern1_1_266)"/>
+<rect x="28" y="51" width="49" height="16" fill="url(#pattern2_1_266)"/>
 <defs>
-<filter id="filter0_d_1_266" x="0" y="0" width="429" height="271" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feMorphology radius="4" operator="dilate" in="SourceAlpha" result="effect1_dropShadow_1_266"/>
-<feOffset dy="6"/>
-<feGaussianBlur stdDeviation="15"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.125 0 0 0 0 0.125 0 0 0 0 0.125 0 0 0 0.1 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_266"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_266" result="shape"/>
-</filter>
 <pattern id="pattern0_1_266" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image0_1_266" transform="matrix(0.000507099 0 0 0.000825083 -0.276369 -0.818482)"/>
 </pattern>
@@ -25,7 +13,7 @@
 <pattern id="pattern2_1_266" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image2_1_266" transform="matrix(0.00204082 0 0 0.00625 -0.0102041 0)"/>
 </pattern>
-<radialGradient id="paint0_radial_1_266" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(274.5 130) rotate(90.7957) scale(108.01 192.078)">
+<radialGradient id="paint0_radial_1_266" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(240.5 102) rotate(90.7957) scale(108.01 192.078)">
 <stop stop-color="#EC5161"/>
 <stop offset="0.00666632" stop-color="#D60633"/>
 <stop offset="1" stop-color="#121212"/>
